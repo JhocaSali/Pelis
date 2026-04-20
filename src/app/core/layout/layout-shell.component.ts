@@ -23,7 +23,7 @@ import { AppFooterComponent } from './components/app-footer/app-footer.component
       min-height: 100vh;
       background-color: #0a0a0a;
       color: #ffffff;
-      display: flex;
+      display: flex;    
       flex-direction: column;
     }
 
