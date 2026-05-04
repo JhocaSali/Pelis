@@ -23,7 +23,7 @@
       <p class="hero__description">{{ activeGenre.description }}</p>
 
       <div class="hero__actions">
-        <button class="btn btn--primary">
+        <button class="btn btn--primary" (click)="openTrailer()">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
             <polygon points="3,1 13,7 3,13"/>
           </svg>
@@ -52,3 +52,16 @@
 
   </div>
 </section>
+
+<!-- Popup tráiler -->
+<div class="trailer-backdrop" *ngIf="showTrailer" (click)="closeTrailer()">
+  <div class="trailer-modal" (click)="$event.stopPropagation()">
+    <button class="trailer-close" (click)="closeTrailer()">✕</button>
+    <iframe
+      [src]="safeTrailerUrl"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
