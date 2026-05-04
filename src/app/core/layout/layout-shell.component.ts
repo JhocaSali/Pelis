@@ -14,6 +14,9 @@ import { MovieCardComponent } from './components/movie-card/movie-card.component
       <app-header />
 
       <main class="app-main">
+        <div class="tendencias-header">
+          <h2 class="tendencias-title">Tendencias</h2>
+        </div>
         <div class="movie-grid">
           <app-movie-card 
             title="Michael" 
@@ -55,6 +58,34 @@ import { MovieCardComponent } from './components/movie-card/movie-card.component
       justify-content: center;
       gap: 20px;
     }
+
+  .tendencias-header {
+    margin-bottom: 25px;
+    padding-left: 10px;
+  }
+
+  .tendencias-title {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+  }
+
+  .tendencias-line {
+    height: 3px;
+    width: 40px;
+    background-color: #e50914;
+    border-radius: 2px;
+  }
+
+  .movie-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
   `]
 })
 export class LayoutShellComponent {}
