@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 
 interface GenreData {
   key: string;
@@ -8,6 +9,7 @@ interface GenreData {
   description: string;
   duration: string;
   rating: string;
+  image: string;
 }
 
 @Component({
@@ -23,10 +25,11 @@ export class HeroComponent {
     {
       key: 'accion',
       label: 'Acción',
-      title: 'Furia sin Límites',
-      description: 'Cuando las reglas se rompen y el tiempo se acaba, solo queda una salida.',
+      title: 'Guerra Mundial Z',
+      description: 'La humanidad se enfrenta a una amenaza sin precedentes: enjambres masivos de infectados veloces que han puesto al mundo de rodillas.',
       duration: '2h 18m',
-      rating: '8.4'
+      rating: '8.4',
+      image: 'img/accion.jpg'
     },
     {
       key: 'suspenso',
@@ -34,28 +37,33 @@ export class HeroComponent {
       title: 'El Último Testigo',
       description: 'Nadie sabe lo que realmente vio esa noche. La verdad se esconde en las sombras.',
       duration: '1h 54m',
-      rating: '9.1'
+      rating: '9.1',
+      image: 'img/suspenso.jpg'
     },
     {
       key: 'scifi',
       label: 'Ciencia Ficción',
-      title: 'Más Allá del Horizonte',
-      description: 'Un viaje épico a través del tiempo y el espacio que desafía la realidad.',
+      title: 'Harry Potter y la Piedra Filosofal',
+      description: 'Un niño huérfano maltratado por sus tíos, descubre a los 11 años que es mago.',
       duration: '2h 35m',
-      rating: '8.8'
+      rating: '8.8',
+      image: 'img/scifi.jpeg'
     },
     {
       key: 'comedia',
       label: 'Comedia',
-      title: 'Caos en Familia',
-      description: 'Una reunión familiar que nadie planeó y todos recordarán. Risas garantizadas.',
+      title: 'Norbit',
+      description: 'Un hombre tímido y de buen corazón, atrapado en un matrimonio infeliz con la dominante Rasputia.',
       duration: '1h 42m',
-      rating: '7.9'
+      rating: '7.9',
+      image: 'img/comedia.jpg'
     }
   ];
 
-  activeGenre: GenreData = this.genres[0];
+   activeGenre: GenreData = this.genres[0];
   isAnimating = false;
+
+  constructor(private sanitizer: DomSanitizer) {}
 
   selectGenre(genre: GenreData): void {
     if (this.isAnimating || genre.key === this.activeGenre.key) return;
@@ -65,5 +73,9 @@ export class HeroComponent {
       this.activeGenre = genre;
       setTimeout(() => { this.isAnimating = false; }, 400);
     }, 300);
+  }
+
+  getBackgroundStyle(image: string): SafeStyle {
+    return this.sanitizer.bypassSecurityTrustStyle(`url('${image}')`);
   }
 }
