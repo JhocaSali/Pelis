@@ -1,1 +1,46 @@
-<p>hero works!</p>
+<section class="hero" [class]="'hero--' + activeGenre.key">
+
+  <div class="hero__tabs">
+    <button
+      *ngFor="let genre of genres"
+      class="hero__tab"
+      [class.hero__tab--active]="genre.key === activeGenre.key"
+      (click)="selectGenre(genre)">
+      {{ genre.label }}
+    </button>
+  </div>
+
+  <div class="hero__body" [class.hero__body--hidden]="isAnimating">
+    <span class="hero__eyebrow">— {{ activeGenre.label }}</span>
+    <h1 class="hero__title">{{ activeGenre.title }}</h1>
+    <p class="hero__description">{{ activeGenre.description }}</p>
+
+    <div class="hero__actions">
+      <button class="btn btn--primary">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
+          <polygon points="3,1 13,7 3,13"/>
+        </svg>
+        Ver tráiler
+      </button>
+      <button class="btn btn--secondary">
+        Leer resumen
+      </button>
+    </div>
+  </div>
+
+  <footer class="hero__meta">
+    <div class="hero__meta-item">
+      <span class="hero__meta-label">Destacado</span>
+      <span class="hero__meta-value">{{ activeGenre.title }}</span>
+    </div>
+    <div class="hero__meta-item">
+      <span class="hero__meta-label">Duración</span>
+      <span class="hero__meta-value">{{ activeGenre.duration }}</span>
+    </div>
+    <div class="hero__meta-item">
+      <span class="hero__meta-label">Calificación</span>
+      <span class="hero__meta-value">★ {{ activeGenre.rating }}</span>
+    </div>
+  </footer>
+
+</section>
