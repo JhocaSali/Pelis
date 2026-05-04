@@ -33,7 +33,6 @@ import { MovieCardComponent } from '../../features/movies/components/movie-card/
     .app-main {
       flex: 1;
       width: 100%;
-      padding: 20px;
     }
   `]
 })
