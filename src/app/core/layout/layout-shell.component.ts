@@ -14,23 +14,7 @@ import { MovieCardComponent } from '../../features/movies/components/movie-card/
       <app-header />
 
       <main class="app-main">
-        <div class="tendencias-header">
-          <h2 class="tendencias-title">Tendencias</h2>
-        </div>
-        <div class="movie-grid">
-          <app-movie-card 
-            title="Michael" 
-            imageUrl="img/tendencia1.jpg" />
-
-          <app-movie-card 
-            title="Apex" 
-            imageUrl="img/tendencia2.jpg" />
-
-          <app-movie-card 
-            title="Project Hail Mary" 
-            imageUrl="img/tendencia3.jpg" />
-        </div>
-
+        
         <router-outlet />
       </main>
       
@@ -51,41 +35,6 @@ import { MovieCardComponent } from '../../features/movies/components/movie-card/
       width: 100%;
       padding: 20px;
     }
-
-    .movie-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-  .tendencias-header {
-    margin-bottom: 25px;
-    padding-left: 10px;
-  }
-
-  .tendencias-title {
-    font-size: 1.4rem;
-    color: #ffffff;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-weight: 600;
-  }
-
-  .tendencias-line {
-    height: 3px;
-    width: 40px;
-    background-color: #e50914;
-    border-radius: 2px;
-  }
-
-  .movie-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
   `]
 })
 export class LayoutShellComponent {}

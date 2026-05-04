@@ -1,7 +1,17 @@
 <div class="movie-card">
-  <img [src]="imageUrl" [alt]="title" class="movie-poster">
+  <div class="movie-poster-container">
+    <img [src]="imageUrl" [alt]="title" class="movie-poster">
+  </div>
   <div class="movie-info">
-    <h3>{{ title }}</h3>
-    <button class="btn-details">Ver detalles</button>
+    <div class="movie-header">
+      <h3 class="movie-title">{{ title }}</h3>
+      <span class="movie-rating">★ {{ rating }}</span>
+    </div>
+    <p class="movie-year">{{ year }}</p>
+    <p class="movie-description">{{ description }}</p>
+    <div class="movie-actions">
+      <button class="btn-play">▶ Ver tráiler</button>
+      <button class="btn-summary">📖 Ver resumen</button>
+    </div>
   </div>
 </div>
