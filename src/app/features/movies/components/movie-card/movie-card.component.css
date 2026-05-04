@@ -1,5 +1,5 @@
 .movie-card {
-  background-color: #1a1a1a; /* Fondo gris oscuro de la tarjeta */
+  background-color: #1a1a1a;
   border-radius: 12px;
   overflow: hidden;
   display: flex;
@@ -13,7 +13,7 @@
 
 .movie-poster-container {
   width: 100%;
-  aspect-ratio: 2 / 3; /* Mantiene la forma del poster */
+  aspect-ratio: 2 / 3;
 }
 
 .movie-poster {
