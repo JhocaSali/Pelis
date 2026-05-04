@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AppHeaderComponent } from './components/app-header/app-header.component';
 import { AppFooterComponent } from './components/app-footer/app-footer.component';
-import { MovieCardComponent } from './components/movie-card/movie-card.component';
+import { MovieCardComponent } from '../../features/movies/components/movie-card/movie-card.component';
 
 @Component({
   selector: 'app-layout-shell',
